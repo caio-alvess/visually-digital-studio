@@ -56,7 +56,7 @@ const SEGMENTS = [
   "Advogados e consultores",
   "Educação",
   "Campanhas políticas",
-];
+] as const;
 
 const SERVICES = [
   ["Estratégia e posicionamento", "Definimos para quem você vende, o que te diferencia e como dizer isso em uma frase que o cliente entende e lembra."],
@@ -65,20 +65,20 @@ const SERVICES = [
   ["Tráfego pago", "Anúncios no Meta e no Google para o público certo, com orçamento controlado e relatório de quanto custou cada contato."],
   ["Identidade visual e site", "Logo, cores, materiais e páginas de venda que deixam sua marca reconhecível e fácil de contratar."],
   ["Marketing político", "Pré-campanha, campanha e mandato, dentro das regras do TSE. Uma das áreas em que temos mais experiência."],
-];
+] as const;
 
 const STEPS = [
   ["Diagnóstico", "Uma conversa pelo WhatsApp sobre o seu negócio, seu público e onde você está hoje. Sem custo e sem compromisso."],
   ["Plano", "Você recebe por escrito: público, mensagem, canais, cronograma e investimento. Sabe o que vai ser feito antes de começar."],
   ["Execução", "Nossa equipe cria, publica e anuncia. Você aprova o que vai ao ar e volta a cuidar do seu negócio."],
   ["Ajuste semanal", "Toda semana olhamos os números juntos. O que traz resultado recebe mais verba; o que não traz, sai."],
-];
+] as const;
 
 const AUDIENCES = [
   ["Empresas e marcas", "Quer vender mais, aparecer para quem está procurando e parar de depender só de indicação.", "Olá! Tenho uma empresa e quero entender como a Visually pode me ajudar."],
   ["Profissionais e especialistas", "Médico, advogado, consultor ou criador: quer ser a referência da sua área na sua cidade.", "Olá! Sou profissional autônomo e quero entender como a Visually pode me ajudar."],
   ["Política", "Pré-candidato, candidato ou mandato: quer ser conhecido, ser entendido e chegar ao eleitor certo.", "Olá! Trabalho com política e quero entender como a Visually pode me ajudar."],
-];
+] as const;
 
 const FAQ = [
   ["Que tipo de cliente vocês atendem?", "Empresas de todos os tamanhos, profissionais liberais, marcas pessoais e campanhas políticas. Se você precisa ser encontrado e escolhido na internet, a gente consegue ajudar."],
@@ -87,7 +87,7 @@ const FAQ = [
   ["Em quanto tempo vejo resultado?", "Anúncios trazem os primeiros contatos já nas primeiras semanas. Reconhecimento de marca leva mais tempo e depende de constância."],
   ["Vocês atendem fora da minha cidade?", "Sim. Atendemos clientes em todo o Brasil, com reuniões online e, quando faz sentido, equipe de gravação no local."],
   ["Como funciona o marketing político?", "É uma área com regras próprias. Seguimos as resoluções do TSE em toda peça e anúncio e trabalhamos da pré-campanha ao mandato."],
-];
+] as const;
 
 function Index() {
   return (
