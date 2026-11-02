@@ -2,7 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/site.css?raw";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Visually | Marketing político que transforma nome em voto" }] }),
+  head: () => ({
+    meta: [
+      { title: "Visually | Marketing político que transforma nome em voto" },
+      { name: "description", content: "Agência de marketing político: estratégia, conteúdo e campanha digital para pré-candidatos, candidatos e mandatos." },
+      { property: "og:title", content: "Visually | Marketing político que transforma nome em voto" },
+      { property: "og:description", content: "Agência de marketing político: estratégia, conteúdo e campanha digital para pré-candidatos, candidatos e mandatos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
