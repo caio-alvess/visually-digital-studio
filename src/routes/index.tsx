@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/site.css?raw";
-import heroStudio from "@/assets/hero-studio.jpg";
+import heroWorkspace from "@/assets/hero-workspace.jpg";
 
 const TITLE = "Visually | Agência de marketing digital";
 const DESCRIPTION =
-  "Redes sociais, anúncios, vídeo, identidade visual e marketing político. Estratégia clara e relatório semanal com números.";
+  "Redes sociais, anúncios e vídeo para empresas, profissionais e campanhas políticas. Diagnóstico gratuito pelo WhatsApp.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,34 +59,31 @@ const SEGMENTS = [
 ] as const;
 
 const SERVICES = [
-  ["Estratégia e posicionamento", "Definimos para quem você vende, o que te diferencia e como dizer isso em uma frase que o cliente entende e lembra."],
-  ["Gestão de redes sociais", "Calendário, roteiro, design e publicação. Você aprova, a gente posta. Presença constante, sem sumir por semanas."],
-  ["Vídeo e conteúdo", "Reels, depoimentos, bastidores e vídeos de produto gravados e editados para segurar a atenção nos primeiros segundos."],
-  ["Tráfego pago", "Anúncios no Meta e no Google para o público certo, com orçamento controlado e relatório de quanto custou cada contato."],
-  ["Identidade visual e site", "Logo, cores, materiais e páginas de venda que deixam sua marca reconhecível e fácil de contratar."],
-  ["Marketing político", "Pré-campanha, campanha e mandato, dentro das regras do TSE. Uma das áreas em que temos mais experiência."],
+  ["Redes sociais", "Conteúdo, design e publicação toda semana."],
+  ["Tráfego pago", "Anúncios no Meta e Google com custo por contato."],
+  ["Vídeo", "Reels, depoimentos e vídeos de produto."],
+  ["Identidade visual", "Logo, cores e materiais da sua marca."],
+  ["Sites e páginas", "Páginas de venda rápidas e fáceis de contratar."],
+  ["Marketing político", "Pré-campanha, campanha e mandato, dentro das regras do TSE."],
 ] as const;
 
 const STEPS = [
-  ["Diagnóstico", "Uma conversa pelo WhatsApp sobre o seu negócio, seu público e onde você está hoje. Sem custo e sem compromisso."],
-  ["Plano", "Você recebe por escrito: público, mensagem, canais, cronograma e investimento. Sabe o que vai ser feito antes de começar."],
-  ["Execução", "Nossa equipe cria, publica e anuncia. Você aprova o que vai ao ar e volta a cuidar do seu negócio."],
-  ["Ajuste semanal", "Toda semana olhamos os números juntos. O que traz resultado recebe mais verba; o que não traz, sai."],
+  ["Conversa", "Você conta seu objetivo pelo WhatsApp."],
+  ["Plano", "Recebe a proposta com o que fazer e quanto custa."],
+  ["Resultado", "A gente executa e mostra os números toda semana."],
 ] as const;
 
 const AUDIENCES = [
-  ["Empresas e marcas", "Quer vender mais, aparecer para quem está procurando e parar de depender só de indicação.", "Olá! Tenho uma empresa e quero entender como a Visually pode me ajudar."],
-  ["Profissionais e especialistas", "Médico, advogado, consultor ou criador: quer ser a referência da sua área na sua cidade.", "Olá! Sou profissional autônomo e quero entender como a Visually pode me ajudar."],
-  ["Política", "Pré-candidato, candidato ou mandato: quer ser conhecido, ser entendido e chegar ao eleitor certo.", "Olá! Trabalho com política e quero entender como a Visually pode me ajudar."],
+  ["Empresas", "Mais clientes e menos dependência de indicação.", "Olá! Tenho uma empresa e quero entender como a Visually pode me ajudar."],
+  ["Profissionais", "Ser a referência da sua área na sua cidade.", "Olá! Sou profissional autônomo e quero entender como a Visually pode me ajudar."],
+  ["Política", "Ser conhecido e chegar ao eleitor certo.", "Olá! Trabalho com política e quero entender como a Visually pode me ajudar."],
 ] as const;
 
 const FAQ = [
-  ["Que tipo de cliente vocês atendem?", "Empresas de todos os tamanhos, profissionais liberais, marcas pessoais e campanhas políticas. Se você precisa ser encontrado e escolhido na internet, a gente consegue ajudar."],
-  ["Preciso já ter redes sociais funcionando?", "Não. Podemos começar do zero, com identidade, perfis e primeiros conteúdos, ou assumir o que você já tem e organizar."],
-  ["Quanto custa?", "Depende do que você precisa e do tamanho do seu mercado. Por isso começamos com um diagnóstico gratuito e mandamos uma proposta sob medida, sem pacote engessado."],
-  ["Em quanto tempo vejo resultado?", "Anúncios trazem os primeiros contatos já nas primeiras semanas. Reconhecimento de marca leva mais tempo e depende de constância."],
-  ["Vocês atendem fora da minha cidade?", "Sim. Atendemos clientes em todo o Brasil, com reuniões online e, quando faz sentido, equipe de gravação no local."],
-  ["Como funciona o marketing político?", "É uma área com regras próprias. Seguimos as resoluções do TSE em toda peça e anúncio e trabalhamos da pré-campanha ao mandato."],
+  ["Quanto custa?", "Depende do que você precisa. O diagnóstico é gratuito e a proposta vem sob medida."],
+  ["Preciso já ter redes sociais?", "Não. Começamos do zero ou organizamos o que você já tem."],
+  ["Em quanto tempo vejo resultado?", "Com anúncios, os primeiros contatos chegam nas primeiras semanas."],
+  ["Atendem fora da minha cidade?", "Sim, em todo o Brasil, com reuniões online."],
 ] as const;
 
 function Index() {
@@ -108,22 +105,11 @@ function Index() {
           </div>
         </div>
 
-        <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-            <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">Postar todo dia <span className="font-serif font-normal italic text-primary">não é estratégia.</span></h2>
-            <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-              <p>Muito negócio bom passa despercebido na internet. Não por falta de qualidade, mas porque ninguém encontra, ou encontra e não entende o que ele oferece.</p>
-              <p>Anunciar sem público definido é gastar à toa. Contratar um designer, um editor e um gestor de anúncios separados é passar o dia coordenando gente.</p>
-              <p className="text-foreground">O que funciona é simples: mensagem clara, presença constante e anúncio para a pessoa certa. É isso que a gente faz.</p>
-            </div>
-          </div>
-        </section>
-
         <section className="border-t border-border bg-card py-24 md:py-32" id="servicos">
           <div className="mx-auto max-w-7xl px-5 md:px-10">
             <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <h2 className="max-w-2xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Todo o seu marketing, <span className="text-gold">numa equipe só.</span></h2>
-              <p className="max-w-sm text-muted-foreground">Um contato, uma estratégia, um responsável. Você não precisa juntar cinco fornecedores.</p>
+              <p className="max-w-sm text-muted-foreground">Um contato só para tudo.</p>
             </div>
             <div className="grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES.map(([title, text], i) => (
@@ -139,8 +125,8 @@ function Index() {
 
         <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32" id="metodo">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">Como funciona</p>
-          <h2 className="max-w-3xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Do primeiro contato ao resultado, em 4 passos.</h2>
-          <ol className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <h2 className="max-w-3xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Simples assim: 3 passos.</h2>
+          <ol className="mt-16 grid gap-10 md:grid-cols-3">
             {STEPS.map(([title, text], i) => (
               <li className="relative border-t-2 border-primary pt-6" key={title}>
                 <span className="font-display text-sm font-bold text-primary">Passo {i + 1}</span>
@@ -163,10 +149,7 @@ function Index() {
             <div>
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em]">Quem somos</p>
               <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">Uma equipe completa, <span className="font-serif font-normal italic">sem intermediário.</span></h2>
-              <div className="mt-8 space-y-5 text-lg leading-relaxed opacity-80">
-                <p>A Visually é uma agência de marketing digital. Juntamos estrategistas, redatores, designers, editores de vídeo e gestores de tráfego no mesmo time.</p>
-                <p>Atendemos empresas, profissionais e marcas pessoais, e temos uma área dedicada a campanhas políticas. Em todos os casos, você fala direto com quem faz o trabalho.</p>
-              </div>
+              <p className="mt-8 text-lg leading-relaxed opacity-80">Estratégia, design, vídeo e anúncios no mesmo time. Você fala direto com quem faz.</p>
               <ul className="mt-10 grid gap-4 sm:grid-cols-2">
                 {["Atendimento direto pelo WhatsApp", "Relatório semanal com números", "Criação e anúncios no mesmo time", "Sigilo sobre sua estratégia"].map((t) => (
                   <li className="flex items-start gap-3 font-semibold" key={t}><span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-paper-foreground text-xs text-paper">✓</span>{t}</li>
@@ -194,7 +177,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-10 lg:grid-cols-[1fr_1.5fr]">
             <div>
               <h2 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">Perguntas <span className="font-serif font-normal italic text-primary">frequentes.</span></h2>
-              <p className="mt-5 text-muted-foreground">Sua dúvida não está aqui? Pergunte direto pra gente.</p>
+              <p className="mt-5 text-muted-foreground">Ficou alguma dúvida? Pergunte.</p>
               <div className="mt-8">
                 <a className={btnOutline} href={wa("Olá! Tenho uma dúvida sobre o trabalho da Visually.")} rel="noopener noreferrer" target="_blank"><WhatsIcon />Tirar minha dúvida<span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
               </div>
@@ -215,7 +198,7 @@ function Index() {
           <div className="relative mx-auto max-w-4xl px-5 text-center">
             <img className="mx-auto mb-10 h-32 w-32 object-contain drop-shadow-[0_0_30px_var(--primary)] md:h-40 md:w-40" src="/site-assets/ca51e846d6087d5e.webp" alt="Logo Visually" loading="lazy" decoding="async" width="320" height="316" />
             <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">Peça seu diagnóstico gratuito. <span className="block font-serif font-normal italic text-gold">Leva 20 minutos.</span></h2>
-            <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">Chame no WhatsApp e conte o que você vende e para quem. Você sai da conversa sabendo o que fazer primeiro, fechando com a gente ou não.</p>
+            <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">Você sai da conversa sabendo o que fazer primeiro.</p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <CtaPrimary text="Olá! Quero meu diagnóstico gratuito com a Visually." label="Quero meu diagnóstico gratuito" />
               <span className="text-sm text-muted-foreground">Resposta em até 1 dia útil · sem compromisso</span>
@@ -268,13 +251,13 @@ function Header() {
 function Hero() {
   return (
     <section className="grain relative flex min-h-[100svh] items-end pt-20" id="topo">
-      <img className="absolute inset-0 h-full w-full object-cover" src={heroStudio} alt="Criadora gravando vídeo de produto enquanto colega acompanha os resultados dos anúncios" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1200} />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+      <img className="absolute inset-0 h-full w-full object-cover" src={heroWorkspace} alt="Mesa de estúdio com câmera, celular com redes sociais e notebook com resultados de anúncios" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1200} />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 md:px-10 md:pb-24">
         <img className="mb-8 h-24 w-24 object-contain drop-shadow-[0_0_30px_var(--primary)] md:h-32 md:w-32" src="/site-assets/ca51e846d6087d5e.webp" alt="Logo Visually" loading="eager" decoding="async" width="320" height="316" />
         <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Agência de marketing digital</p>
         <h1 className="max-w-5xl font-display text-[2.6rem] font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-[5.5rem]">Marketing digital que <span className="font-serif font-normal italic text-gold">vira cliente.</span></h1>
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">Redes sociais, anúncios, vídeo e identidade visual para empresas, profissionais e campanhas políticas. Toda semana você vê os números e sabe para onde foi cada real.</p>
+        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">Redes sociais, anúncios e vídeo para empresas, profissionais e campanhas políticas.</p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <CtaPrimary text="Olá! Quero um diagnóstico gratuito do meu marketing." label="Quero meu diagnóstico gratuito" />
           <a className={btnOutline} href="#servicos">Ver serviços</a>
