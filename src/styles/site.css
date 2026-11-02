@@ -208,7 +208,7 @@
   .to-background\/30 { --tw-gradient-to: color-mix(in oklab, var(--background) 30%, transparent); }
 }
   .to-background\/30 { --tw-gradient-stops: var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)); }
-  .text-gold { background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; color: rgba(0, 0, 0, 0); background-clip: text; }
+  .text-gold { background-image: var(--gradient-gold); color: transparent; -webkit-background-clip: text; background-clip: text; }
   
   
   
