@@ -1,6 +1,11 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Clapperboard, Landmark, Megaphone, Menu, MessageCircle, MonitorSmartphone, Palette, FileText, TrendingUp, Share2, X } from "lucide-react";
 import capturedCSS from "../styles/site.css?raw";
 import heroWorkspace from "@/assets/hero-workspace.jpg";
+import illEmpresas from "@/assets/ill-empresas.jpg";
+import illProfissionais from "@/assets/ill-profissionais.jpg";
+import illPolitica from "@/assets/ill-politica.jpg";
 
 const TITLE = "Visually | Agência de marketing digital";
 const DESCRIPTION =
@@ -59,24 +64,24 @@ const SEGMENTS = [
 ] as const;
 
 const SERVICES = [
-  ["Redes sociais", "Conteúdo, design e publicação toda semana."],
-  ["Tráfego pago", "Anúncios no Meta e Google com custo por contato."],
-  ["Vídeo", "Reels, depoimentos e vídeos de produto."],
-  ["Identidade visual", "Logo, cores e materiais da sua marca."],
-  ["Sites e páginas", "Páginas de venda rápidas e fáceis de contratar."],
-  ["Marketing político", "Pré-campanha, campanha e mandato, dentro das regras do TSE."],
+  ["Redes sociais", "Conteúdo e publicação toda semana.", Share2],
+  ["Tráfego pago", "Anúncios no Meta e Google.", Megaphone],
+  ["Vídeo", "Reels, depoimentos e produto.", Clapperboard],
+  ["Identidade visual", "Logo, cores e materiais.", Palette],
+  ["Sites e páginas", "Páginas que vendem.", MonitorSmartphone],
+  ["Marketing político", "Dentro das regras do TSE.", Landmark],
 ] as const;
 
 const STEPS = [
-  ["Conversa", "Você conta seu objetivo pelo WhatsApp."],
-  ["Plano", "Recebe a proposta com o que fazer e quanto custa."],
-  ["Resultado", "A gente executa e mostra os números toda semana."],
+  ["Conversa", "Você conta seu objetivo.", MessageCircle],
+  ["Plano", "Proposta com o que fazer e quanto custa.", FileText],
+  ["Resultado", "Números toda semana.", TrendingUp],
 ] as const;
 
 const AUDIENCES = [
-  ["Empresas", "Mais clientes e menos dependência de indicação.", "Olá! Tenho uma empresa e quero entender como a Visually pode me ajudar."],
-  ["Profissionais", "Ser a referência da sua área na sua cidade.", "Olá! Sou profissional autônomo e quero entender como a Visually pode me ajudar."],
-  ["Política", "Ser conhecido e chegar ao eleitor certo.", "Olá! Trabalho com política e quero entender como a Visually pode me ajudar."],
+  ["Empresas", "Mais clientes, menos dependência de indicação.", illEmpresas, "Olá! Tenho uma empresa e quero entender como a Visually pode me ajudar."],
+  ["Profissionais", "Seja referência na sua área.", illProfissionais, "Olá! Sou profissional autônomo e quero entender como a Visually pode me ajudar."],
+  ["Política", "Chegue ao eleitor certo.", illPolitica, "Olá! Trabalho com política e quero entender como a Visually pode me ajudar."],
 ] as const;
 
 const FAQ = [
@@ -111,12 +116,12 @@ function Index() {
               <h2 className="max-w-2xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Todo o seu marketing, <span className="text-gold">numa equipe só.</span></h2>
               <p className="max-w-sm text-muted-foreground">Um contato só para tudo.</p>
             </div>
-            <div className="grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES.map(([title, text], i) => (
-                <article className="group border-b border-r border-border p-8 transition-colors hover:bg-secondary md:p-10" key={title}>
-                  <span className="font-serif text-4xl italic text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-6 font-display text-xl font-bold">{title}</h3>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">{text}</p>
+            <div className="grid grid-cols-2 border-l border-t border-border lg:grid-cols-3">
+              {SERVICES.map(([title, text, Icon]) => (
+                <article className="group border-b border-r border-border p-5 transition-colors hover:bg-secondary sm:p-8 md:p-10" key={title}>
+                  <span className="grid h-16 w-16 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary transition-transform group-hover:-translate-y-1"><Icon className="h-8 w-8" strokeWidth={1.5} aria-hidden="true" /></span>
+                  <h3 className="mt-6 font-display text-lg font-bold sm:text-xl">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{text}</p>
                 </article>
               ))}
             </div>
@@ -126,12 +131,14 @@ function Index() {
         <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32" id="metodo">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">Como funciona</p>
           <h2 className="max-w-3xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Simples assim: 3 passos.</h2>
-          <ol className="mt-16 grid gap-10 md:grid-cols-3">
-            {STEPS.map(([title, text], i) => (
-              <li className="relative border-t-2 border-primary pt-6" key={title}>
-                <span className="font-display text-sm font-bold text-primary">Passo {i + 1}</span>
-                <h3 className="mt-2 font-display text-2xl font-bold">{title}</h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{text}</p>
+          <ol className="mt-12 grid gap-5 md:grid-cols-3">
+            {STEPS.map(([title, text, Icon], i) => (
+              <li className="relative flex items-start gap-5 rounded-2xl border border-border bg-card p-6" key={title}>
+                <span className="relative grid h-16 w-16 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground"><Icon className="h-7 w-7" aria-hidden="true" /><span className="absolute -right-1 -top-1 grid h-6 w-6 place-items-center rounded-full border-2 border-card bg-foreground font-display text-xs font-bold text-background">{i + 1}</span></span>
+                <div className="min-w-0">
+                <h3 className="font-display text-2xl font-bold">{title}</h3>
+                <p className="mt-1 leading-relaxed text-muted-foreground">{text}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -163,11 +170,14 @@ function Index() {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">Para quem</p>
           <h2 className="mb-14 max-w-3xl font-display text-4xl font-extrabold tracking-tight md:text-5xl">Qual é o seu caso?</h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {AUDIENCES.map(([title, text, msg]) => (
-              <a className="group rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary" href={wa(msg)} rel="noopener noreferrer" target="_blank" key={title}>
+            {AUDIENCES.map(([title, text, img, msg]) => (
+              <a className="group overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary" href={wa(msg)} rel="noopener noreferrer" target="_blank" key={title}>
+                <img className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" src={img} alt="" loading="lazy" decoding="async" width={1024} height={768} />
+                <div className="p-7">
                 <h3 className="font-display text-3xl font-extrabold">{title}</h3>
-                <p className="mt-4 leading-relaxed text-muted-foreground">{text}</p>
-                <span className="mt-8 inline-flex items-center gap-2 font-bold text-primary"><WhatsIcon className="h-4 w-4" /> Conversar agora <span className="transition-transform group-hover:translate-x-1">→</span></span>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{text}</p>
+                <span className="mt-6 inline-flex items-center gap-2 font-bold text-primary"><WhatsIcon className="h-4 w-4" /> Conversar agora <span className="transition-transform group-hover:translate-x-1">→</span></span>
+                </div>
               </a>
             ))}
           </div>
@@ -224,26 +234,74 @@ function Index() {
   );
 }
 
+const NAV = [
+  ["#servicos", "Serviços"],
+  ["#metodo", "Como funciona"],
+  ["#para-quem", "Para quem"],
+  ["#faq", "Dúvidas"],
+] as const;
+
 function Header() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-10">
-        <a className="flex items-center gap-3" aria-label="Visually — início" href="#topo">
-          <img className="h-12 w-12 object-contain drop-shadow-[0_0_14px_var(--primary)] md:h-14 md:w-14" src="/site-assets/e833cb2744300f41.webp" alt="" loading="eager" decoding="async" width="112" height="110" />
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 md:px-10">
+        <a className="flex min-w-0 items-center gap-3" aria-label="Visually — início" href="#topo" onClick={() => setOpen(false)}>
+          <img className="h-12 w-12 shrink-0 object-contain drop-shadow-[0_0_14px_var(--primary)] md:h-14 md:w-14" src="/site-assets/e833cb2744300f41.webp" alt="" loading="eager" decoding="async" width="112" height="110" />
           <span className="font-display text-2xl font-extrabold tracking-tight md:text-3xl">VISUALLY<span className="text-primary">.</span></span>
         </a>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-muted-foreground lg:flex">
-          <a className="hover:text-foreground" href="#servicos">Serviços</a>
-          <a className="hover:text-foreground" href="#metodo">Como funciona</a>
-          <a className="hover:text-foreground" href="#para-quem">Para quem</a>
-          <a className="hover:text-foreground" href="#faq">Dúvidas</a>
+          {NAV.map(([href, label]) => (
+            <a className="hover:text-foreground" href={href} key={href}>{label}</a>
+          ))}
         </nav>
-        <a className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground hover:brightness-110 md:px-5" href={wa("Olá! Vim pelo site da Visually e quero conversar.")} rel="noopener noreferrer" target="_blank">
-          <WhatsIcon className="h-4 w-4" />
-          <span className="hidden sm:inline">Falar no WhatsApp</span>
-          <span className="sm:hidden">WhatsApp</span>
-        </a>
+        <div className="flex shrink-0 items-center gap-2">
+          <a className="hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:brightness-110 sm:inline-flex" href={wa("Olá! Vim pelo site da Visually e quero conversar.")} rel="noopener noreferrer" target="_blank">
+            <WhatsIcon className="h-4 w-4" />
+            Falar no WhatsApp
+          </a>
+          <button
+            type="button"
+            className="grid h-11 w-11 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-primary hover:text-primary lg:hidden"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
+      {open && (
+        <div id="menu-mobile" className="h-[calc(100svh-5rem)] overflow-y-auto border-t border-border bg-background px-5 pb-10 pt-6 lg:hidden">
+          <nav className="flex flex-col">
+            {NAV.map(([href, label], i) => (
+              <a className="flex items-center justify-between border-b border-border py-5 font-display text-3xl font-extrabold tracking-tight hover:text-primary" href={href} key={href} onClick={() => setOpen(false)}>
+                {label}
+                <span className="font-serif text-lg font-normal italic text-primary">{String(i + 1).padStart(2, "0")}</span>
+              </a>
+            ))}
+          </nav>
+          <div className="mt-8">
+            <a className={`${btnPrimary} w-full`} href={wa("Olá! Vim pelo site da Visually e quero conversar.")} rel="noopener noreferrer" target="_blank" onClick={() => setOpen(false)}>
+              <WhatsIcon />
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
